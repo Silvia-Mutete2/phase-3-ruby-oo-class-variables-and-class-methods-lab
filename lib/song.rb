@@ -25,26 +25,35 @@ class Song
         @@genres.uniq
     end
 
-    def self.genre_count
-        hash = {}
-        @@genres.each do |type|
-            if(!hash.keys.include? type)
-                hash[type] = 1
-            else
-                hash[type]+= 1
-            end
-        end
-        hash
-    end
+    # def self.genre_count
+    #     hash = {}
+    #     @@genres.each do |type|
+    #         if(!hash.keys.include? type)
+    #             hash[type] = 1
+    #         else
+    #             hash[type]+= 1
+    #         end
+    #     end
+    #     hash
+    # end
+    # def self.artist_count
+    #     hash = {}
+    #     @@artists.each do |type|
+    #         if(!hash.keys.include? type)
+    #             hash[type] = 1
+    #         else
+    #             hash[type]+= 1
+    #         end
+    #     end
+    #     hash
+    # end
+
+    def self.genre_count 
+        @@genres.tally
+    end 
+
     def self.artist_count
-        hash = {}
-        @@artists.each do |type|
-            if(!hash.keys.include? type)
-                hash[type] = 1
-            else
-                hash[type]+= 1
-            end
-        end
-        hash
-    end
+        @@artists.tally
+    end 
+
 end
